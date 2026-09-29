@@ -1,0 +1,24 @@
+12 ?- consult(['c:/swi/Family.pl']).
+true.
+
+13 ?- female(X).
+X = sara ;
+x=nora .
+
+14 ?- male(_).
+true .
+
+15 ?- parent(GP, P), parent(P, faisal).
+GP = ali,
+P = muhammad .
+
+16 ?- parent(ahmad, X), female(X).
+X = sara ;
+x=nora .
+
+17 ?- parent(P, ahmad), parent(P, muhammad).
+P = ali.
+
+18 ?- male(khan), parent(P, khan), parent(P, nora), khan \= nora.
+P = ahmad.
+

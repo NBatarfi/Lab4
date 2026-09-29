@@ -1,0 +1,46 @@
+12 ?- house = house.
+true.
+Two identical names.
+
+13 ?- house = abc.
+false.
+ Two different names.
+
+14 ?- edge(a,b) = edge(C,b)
+|    .
+C = a.
+Both edge arguments a=c; pairwise c=a and  b=b.
+
+15 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+Both edge match arguments a=C and d=B; pairwise B=d and C=a.
+
+16 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+Both edge match arguments B=d and C=a.
+
+17 ?-  edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+Both edge match arguments A = a, and B = f(g, h).
+
+
+18 ?- edge(A,A) = edge(b,c).
+false.
+One edge argument A = b, while the other argument A = c. A already matches b, and b doesn't equal c.
+
+19 ?- edge(A,A) = edge(b,b).
+A = b.
+Both arguments require A = b, which is consistent
+
+20?-  A = B, B = f.
+A = B, B = f.
+A=B makes both equal and  B=F  gives b value is f ,so BOTH ARE F.
+
+
+21?- A = B, B = f, A = e.
+false.
+After the last one, both A and B equal f. The third goal indicates A = e, f = e, which is impossible.
+
